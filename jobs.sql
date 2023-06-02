@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 02, 2023 at 05:51 AM
+-- Generation Time: Jun 03, 2023 at 01:44 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -31,9 +31,8 @@ CREATE TABLE `jobapplication` (
   `application_id` int(11) NOT NULL,
   `job_id` int(11) DEFAULT NULL,
   `job_seeker_id` int(11) DEFAULT NULL,
-  `application_status` varchar(255) DEFAULT NULL,
-  `submission_date` date DEFAULT NULL,
-  `category` varchar(255) DEFAULT NULL
+  `application_status` enum('pending','rejected','accepted') DEFAULT NULL,
+  `submission_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -46,7 +45,7 @@ CREATE TABLE `jobposting` (
   `job_id` int(11) NOT NULL,
   `recruiter_id` int(11) DEFAULT NULL,
   `job_title` varchar(255) DEFAULT NULL,
-  `job_description` text DEFAULT NULL,
+  `job_description` varchar(7000) DEFAULT NULL,
   `qualifications` varchar(255) DEFAULT NULL,
   `job_location` varchar(1000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -60,7 +59,7 @@ CREATE TABLE `jobposting` (
 CREATE TABLE `report` (
   `reportId` int(11) NOT NULL,
   `userId` int(11) DEFAULT NULL,
-  `report_txt` text DEFAULT NULL
+  `report_txt` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -71,8 +70,9 @@ CREATE TABLE `report` (
 
 CREATE TABLE `resume` (
   `resume_id` int(11) NOT NULL,
-  `job_seeker_id` int(11) DEFAULT NULL,
-  `file` longblob DEFAULT NULL
+  `job_seeker` int(11) DEFAULT NULL,
+  `file_name` varchar(255) DEFAULT NULL,
+  `file_path` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -89,6 +89,13 @@ CREATE TABLE `user` (
   `user_ph_no` bigint(20) NOT NULL,
   `user_role` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `user_name`, `user_password`, `user_email`, `user_ph_no`, `user_role`) VALUES
+(1, 'kashan', '$2y$10$61gSTrI3zqEWB2FQlZuuAOI9.7V.BNE7y7SxdTAcbqavI7Oq3wYD.', 'kashan@gmail.com', 12345, 'admin');
 
 --
 -- Indexes for dumped tables
@@ -121,7 +128,7 @@ ALTER TABLE `report`
 --
 ALTER TABLE `resume`
   ADD PRIMARY KEY (`resume_id`),
-  ADD KEY `job_seeker_id` (`job_seeker_id`);
+  ADD KEY `job_seeker` (`job_seeker`);
 
 --
 -- Indexes for table `user`
@@ -129,6 +136,40 @@ ALTER TABLE `resume`
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`),
   ADD UNIQUE KEY `user_email` (`user_email`) USING HASH;
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `jobapplication`
+--
+ALTER TABLE `jobapplication`
+  MODIFY `application_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `jobposting`
+--
+ALTER TABLE `jobposting`
+  MODIFY `job_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `report`
+--
+ALTER TABLE `report`
+  MODIFY `reportId` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `resume`
+--
+ALTER TABLE `resume`
+  MODIFY `resume_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -157,7 +198,7 @@ ALTER TABLE `report`
 -- Constraints for table `resume`
 --
 ALTER TABLE `resume`
-  ADD CONSTRAINT `resume_ibfk_1` FOREIGN KEY (`job_seeker_id`) REFERENCES `user` (`user_id`);
+  ADD CONSTRAINT `resume_ibfk_1` FOREIGN KEY (`job_seeker`) REFERENCES `user` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
