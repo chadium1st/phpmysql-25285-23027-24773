@@ -30,7 +30,7 @@ session_start();
         </form>
         <p>Don't have an account?
         <a href="register.php?type=recruiter">Register</a> as a recruiter! </br>
-        <a href="register.php?type=job_seeker">Register</a> as a Job Seeker!</p>
+        <a href="register.php?type=seeker">Register</a> as a Job Seeker!</p>
     </div>
 </body>
 </html>

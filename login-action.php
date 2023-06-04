@@ -28,18 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         setcookie('email', $user['user_email'], time() + (86400 * 30), '/');
 
         // Redirecting to relevant homepage depending on type of user
-        if($type == "recruiter") {
-            header("Location: recruiter-home.php");
-            exit;
-        }
-        else if($type == "seeker") {
-            header("Location: seeker-home.php");
-            exit;
-        }
-        else if($type == "admin") {
-            header("Location: admin-home.php");
-            exit;
-        }
+        returnHome($type);
     }
     else if($user===null){
         $_SESSION['login_error'] = "Invalid Email";

@@ -52,6 +52,19 @@ CREATE TABLE `jobposting` (
 
 -- --------------------------------------------------------
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 --
 -- Table structure for table `report`
 --

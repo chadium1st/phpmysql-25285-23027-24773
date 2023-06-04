@@ -1,24 +1,10 @@
 <?php
 session_start();
-
 // Check if the user is already logged in
-// if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-
+// if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) 
 //     // Redirecting to relevant homepage depending on type of user
-//     if($type == "recruiter") {
-//         header("Location: recruiter-home.php");
-//         exit;
-//     }
-//     else if($type == "seeker") {
-//         header("Location: seeker-home.php");
-//         exit;
-//     }
-//     else if($type == "admin") {
-//         header("Location: admin-home.php");
-//         exit;
-//     }
+    // returnHome($type);
 
-// }
 
 // Include the database connection file
 include "includes/config.php";
