@@ -3,7 +3,7 @@
 session_start();
 include "includes/config.php";
 include "includes/common.php";
-include "includes/common-login-register";
+include "includes/common-login-register.php";
 // Check if the form was submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the form data

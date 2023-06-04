@@ -1,8 +1,11 @@
-        <?php include "includes/meta-tags.php" ?>
+        <?php include "meta-tags.php" ?>
+        <link rel="stylesheet" href="../css/styles.css">
         <div class="header">
         <header class="homepage">
         <input type="search" placeholder="Search here..." class="search">
-        <img class="logo" src="./graphics/logo.png" alt="logo of the website">   
+        <a href="../recruiter-home.php">
+            <img class="logo" src="../graphics/logo.png" alt="logo of the website">   
+        </a>
         <label>
         
                 <input type="checkbox" class="input">
@@ -18,18 +21,15 @@
             <h1 class="h1">Menu</h1>
             <nav>
             <ul class="bar">
-            <li><a href="./index.html">Johannesburg</a></li>
-            <li><a href="./introtosouthafrica.html">Introduction to South Africa</a></li>
-            <li><a href="./history.html">History of Johannesburg</a></li>
-            <li><a href="./culture.html">Culture</a></li>
-            <li><a href="./lifeinjohannesburg.html">Life in Johannesburg</a></li>
-            <li><a href="./lawgovernment.html">Law & Government</a></li>
-            <li><a href="./placestovisit.html">Places To Visit</a></li>
-            <li><a href="./contactus.html">contact us</a></li>
+            <li><a href="post-jobs.php">Post Jobs</a></li>
+            <li><a href="manage-jobs.php">Manage Jobs</a></li>
+            <li><a href="includes/profile.php">My Profile</a></li>        
         </ul>
     </nav>
         </div>
         </label>
-        <img class="profile" src="./graphics/profilepicture.png" alt="profilepicture"> 
+        <a href="includes/profile.php">
+            <img class="profile" src="../graphics/profilepicture.png" alt="profilepicture">
+        </a>
         </header>
         </div>

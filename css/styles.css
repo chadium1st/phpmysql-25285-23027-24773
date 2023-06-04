@@ -1,4 +1,4 @@
-*{
+    *{
     margin: 0;
     padding: 0;
     box-sizing:border-box;
@@ -236,6 +236,10 @@ footer {
     background-color: #8000ff;
     margin: auto;
 }   
+
+footer h1 {
+    color: white;
+}
 
 
 

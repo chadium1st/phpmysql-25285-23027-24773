@@ -7,12 +7,14 @@
 ?>
     <title>Home| Recruite People</title>
 </head>
-<body>
+<body>  
     <?php
         include "includes/recruiter-header.php";
+    ?>
+    <?php
         include "includes/footer.php";
     ?>
-    <h1>LALALALALAL</h1>
+    
 </body>
 </html>
 
