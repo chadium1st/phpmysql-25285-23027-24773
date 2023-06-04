@@ -3,7 +3,7 @@
 session_start();
 include "includes/config.php";
 include "includes/common.php";
-include "includes/common-login-register.php";
+include "includes/common-login-register";
 // Check if the form was submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the form data
@@ -27,9 +27,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Set email cookie
         setcookie('email', $user['user_email'], time() + (86400 * 30), '/');
 
-        // Redirect to the welcome page or any other page you want
-        header("Location: welcome.php");
-        exit;
+        // Redirecting to relevant homepage depending on type of user
+        if($type == "recruiter") {
+            header("Location: recruiter-home.php");
+            exit;
+        }
+        else if($type == "seeker") {
+            header("Location: seeker-home.php");
+            exit;
+        }
+        else if($type == "admin") {
+            header("Location: admin-home.php");
+            exit;
+        }
     }
     else if($user===null){
         $_SESSION['login_error'] = "Invalid Email";

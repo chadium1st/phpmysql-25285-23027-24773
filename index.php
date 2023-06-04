@@ -12,7 +12,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     <title>First Page</title>
 </head>
 <body>
-    <p>Register as <a href="register.php?type=recruiter">Recruiter</a>!</p> or <p>Register as <a href="register.php?type=job_seeker">Job Seeker</a></p>
+    <p>Register as <a href="register.php?type=recruiter">Recruiter</a>!</p> or <p>Register as <a href="register.php?type=seeker">Job Seeker</a></p>
     <p>If you already have an account <a href="login.php">log in</a></p>
+
+    <?php include "includes/footer.php" ?>
 </body>
 </html>

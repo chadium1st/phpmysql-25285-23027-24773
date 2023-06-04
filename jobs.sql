@@ -87,7 +87,7 @@ CREATE TABLE `user` (
   `user_password` varchar(1000) NOT NULL,
   `user_email` varchar(1500) NOT NULL,
   `user_ph_no` bigint(20) NOT NULL,
-  `user_role` varchar(255) NOT NULL
+  `user_role` enum('recruiter','seeker','admin') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -96,10 +96,10 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `user_name`, `user_password`, `user_email`, `user_ph_no`, `user_role`) VALUES
 (1, 'kashan', '$2y$10$61gSTrI3zqEWB2FQlZuuAOI9.7V.BNE7y7SxdTAcbqavI7Oq3wYD.', 'kashan@gmail.com', 12345, 'admin'),
-(2, 'ali', '$2y$10$JLrIwVIClXpZqjj57VajiOgO4n9G/TJlljbpE44u.mH5vUu2wm87O', 'ali@gmail.com', 32345890, 'job_seeker'),
+(2, 'ali', '$2y$10$JLrIwVIClXpZqjj57VajiOgO4n9G/TJlljbpE44u.mH5vUu2wm87O', 'ali@gmail.com', 32345890, 'seeker'),
 (3, 'hassan', '$2y$10$uUadb5fHXA2lZebvNNZvF.zWW1MWaBEgCI2hv5hWLExqLMrRqczIG', 'hassan@gmail.com', 3249573659, 'recruiter'),
-(4, 'wasay', '$2y$10$09C5u0Om1rl/KuShbtnhQOq.OG51rIuZqLSOepgKIKcNnHQpT9jpS', 'wasay@gmail.com', 2222222222, 'job_seeker'),
-(6, 'nick jonas', '$2y$10$1gzI4.FXvClReYrb0Std9.A5AUw96si5GnuyUJmp.iB6S05o4/ddW', 'Nick@yahoo.com', 345978943, 'job_seeker');
+(4, 'wasay', '$2y$10$09C5u0Om1rl/KuShbtnhQOq.OG51rIuZqLSOepgKIKcNnHQpT9jpS', 'wasay@gmail.com', 2222222222, 'seeker'),
+(6, 'nick jonas', '$2y$10$1gzI4.FXvClReYrb0Std9.A5AUw96si5GnuyUJmp.iB6S05o4/ddW', 'Nick@yahoo.com', 345978943, 'seeker');
 
 --
 -- Indexes for dumped tables

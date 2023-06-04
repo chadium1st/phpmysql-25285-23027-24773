@@ -2,14 +2,27 @@
 session_start();
 
 // Check if the user is already logged in
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-    //header("Location: login.php");
-    //exit;
-}
+// if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+
+//     // Redirecting to relevant homepage depending on type of user
+//     if($type == "recruiter") {
+//         header("Location: recruiter-home.php");
+//         exit;
+//     }
+//     else if($type == "seeker") {
+//         header("Location: seeker-home.php");
+//         exit;
+//     }
+//     else if($type == "admin") {
+//         header("Location: admin-home.php");
+//         exit;
+//     }
+
+// }
 
 // Include the database connection file
 include "includes/config.php";
-include "includes/common-login-register";
+include "includes/common-login-register.php";
 include "includes/common.php";
 
 
@@ -22,24 +35,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $phonenumber = sanitizeInput($_POST['phonenumber']);
     $role = sanitizeInput($_POST['role']);
     $user=getUserFromDatabase($email);
+
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
         $_SESSION['register_error'] = "Invalid email format!";
         header("Location: register.php?type=" . urlencode($role));
         exit;
-    } elseif (!preg_match("/^[a-zA-Z][a-zA-Z0-9\s]*$/", $username)) {
+    } 
+    else if (!preg_match("/^[a-zA-Z][a-zA-Z0-9\s]*$/", $username)) {
         $_SESSION['register_error'] = "Invalid username format!";
         header("Location: register.php?type=" . urlencode($role));
         exit;
-    } elseif (!preg_match("/^\d{10,}$/", $phonenumber)) {
+    } 
+    else if (!preg_match("/^\d{10,}$/", $phonenumber)) {
         $_SESSION['register_error'] = "Invalid phone number format(Must be 10 digits or greater)!";
         header("Location: register.php?type=" . urlencode($role));
         exit;
-    } elseif($user!==null){
+
+    } 
+    else if($user!==null) {
+
         $_SESSION['register_error'] = "User with this email already exists!";
         header("Location: register.php?type=" . urlencode($role));
         exit;
     }
-    else{
+    else {
         // Insert the user information into the User table
         $sql = "INSERT INTO User (user_name, user_password, user_email, user_ph_no, user_role)
 
@@ -51,6 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($stmt->execute()) {
             $_SESSION['register_error'] = "Registration Successful!";
             header("Location: register.php?type=" . urlencode($role));
+            // header("Location:".urlencode($role)."-home.php");
             exit;
         } else {
             // Registration failed
