@@ -9,15 +9,15 @@ function sanitizeInput($data) {
 
 function returnHome($type) {
     if($type == "recruiter") {
-        header("Location: recruiter-home.php");
+        header("Location: includes/recruiter-home.php");
         exit;
     }
     else if($type == "seeker") {
-        header("Location: seeker-home.php");
+        header("Location: includes/seeker-home.php");
         exit;
     }
     else if($type == "admin") {
-        header("Location: admin-home.php");
+        header("Location: includes/admin-home.php");
         exit;
     }
 }

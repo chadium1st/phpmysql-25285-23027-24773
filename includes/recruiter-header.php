@@ -3,7 +3,7 @@
         <div class="header">
         <header class="homepage">
         <input type="search" placeholder="Search here..." class="search">
-        <a href="../recruiter-home.php">
+        <a href="recruiter-home.php">
             <img class="logo" src="../graphics/logo.png" alt="logo of the website">   
         </a>
         <label>
@@ -28,7 +28,7 @@
     </nav>
         </div>
         </label>
-        <a href="includes/profile.php">
+        <a href="profile.php">
             <img class="profile" src="../graphics/profilepicture.png" alt="profilepicture">
         </a>
         </header>
