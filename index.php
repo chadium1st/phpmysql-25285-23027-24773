@@ -10,13 +10,26 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login or Register</title>
+    <title>First Page</title>
+    <?php
+        include "includes/metatags.php";
+    ?>
 </head>
-<body>
-
-    <p>Register as <a href="register.php?type=recruiter">Recruiter</a>!</p> or <p>Register as <a href="register.php?type=seeker">Job Seeker</a></p>
-    <p>If you already have an account <a href="login.php">log in</a></p>
-
-    <?php include "includes/footer.php" ?>
+<body id="first-page-body">
+    <div id="first-page-container">
+        <div  id="first-page-option">
+            <a  class="amp" href="register.php?type=recruiter">
+                <p>Register as Recruiter!</p>
+            </a>
+        </div>
+        <div id="first-page-option">
+            <a class="amp" href="register.php?type=job_seeker">
+                <p>Register as Job Seeker</p>
+            </a>
+        </div>
+        <div id="first-page-login">
+            <p>If you already have an account <a class="amp" href="login.php">log in!</a></p>
+        </div>
+    </div>
 </body>
 </html>
