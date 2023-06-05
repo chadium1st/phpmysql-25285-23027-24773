@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="css/styles.css">
 <footer>
-    <h1>&copy; <?php echo date('Y'); ?> - All rights reserved. </h1>
+    <p>&copy; <?php echo date('Y'); ?> JobLicious.com - All rights reserved. </p>
 </footer>
