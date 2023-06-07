@@ -19,9 +19,7 @@ if(!($type==='recruiter'||$type=='job_seeker')) {header("Location: index.php");e
 <html>
 <head>
     <title>Registration Page</title>
-    <?php
-        include "includes/metatags.php";
-    ?>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body id="register-body">
     <h1 id="register-h1">Registration Page</h1>
@@ -31,7 +29,7 @@ if(!($type==='recruiter'||$type=='job_seeker')) {header("Location: index.php");e
             echo '<p id="register-error">' . $_SESSION['register_error'] . '</p>';
             unset($_SESSION['register_error']);
         }
-        else {echo " Register error not set ";}
+        // else {echo " Register error not set ";}
     ?>
     <div id="register-container">
    <form action="register-action.php" method="POST" id="registrationForm">

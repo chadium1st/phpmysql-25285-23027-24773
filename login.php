@@ -7,9 +7,7 @@ session_start();
 <html>
 <head>
     <title>Login Page</title>
-    <?php
-        include "includes/metatags.php";
-    ?>
+    <link rel="stylesheet" href="css/styles.css"> 
 </head>
 <body>
     <div id="supercontainer">

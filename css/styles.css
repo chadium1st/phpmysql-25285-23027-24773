@@ -28,7 +28,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: DynaMedium;
+  font-family: Lodrina;
   background-color: #f2f2f2;
 }
 #supercontainer{
@@ -320,7 +320,7 @@ footer p {
 }
 /* First Page Styles */
 #first-page-body {
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */ 
   background-color: #f2f2f2;
   margin: 0;
   padding: 0;
@@ -379,7 +379,7 @@ footer p {
 }
 
 #register-body {
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
   background-color: #f2f2f2;
 }
 #register-container {
@@ -392,6 +392,7 @@ footer p {
 }
 
 #register-h1 {
+  margin: 10px;
   text-align: center;
 }
 

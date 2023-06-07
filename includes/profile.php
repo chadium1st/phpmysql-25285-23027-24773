@@ -1,6 +1,6 @@
+<link rel="stylesheet" href="../css/styles.css">
 <?php 
-    include "meta-tags.php";
-    include "../login-action.php"
+    include "common.php";
 ?>
 
 <?php 
@@ -9,7 +9,8 @@
 
 <div>
     <h1>
-        <?php echo $user_role["user_role"]; ?>  
+        <?php echo returnName(); ?>
+        <?php echo returnType(); ?>         
     </h1>
 </div>
 

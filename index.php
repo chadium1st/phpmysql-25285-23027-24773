@@ -1,6 +1,5 @@
 <?php
 include "includes/common.php";
-include "login-action.php";
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     returnHome($type);
@@ -11,9 +10,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 <html>
 <head>
     <title>First Page</title>
-    <?php
-        include "includes/metatags.php";
-    ?>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body id="first-page-body">
     <div id="first-page-container">

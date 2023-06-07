@@ -1,4 +1,3 @@
-        <?php include "meta-tags.php" ?>
         <link rel="stylesheet" href="../css/styles.css">
         <div class="header">
         <header class="homepage">
