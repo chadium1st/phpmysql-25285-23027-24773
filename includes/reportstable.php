@@ -13,22 +13,22 @@ $stmt->execute();
 $result=$stmt->get_result();
 $reports = $result->fetch_all(MYSQLI_ASSOC);
 
-echo '<table>';
-        echo '<tr><th>REPORT ID</th><th>USER ID</th><th>REPORT TEXT</th></tr>';
+echo '<table class="user-table">';
+        echo '<tr><th>REPORT ID</th><th>USER ID</th><th>REPORT TEXT</th><th>ACTIONS</th></tr>';
         foreach ($reports as $report) {
             echo '<tr>';
             echo '<td>' . $report['reportId'] . '</td>';
             echo '<td>' . $report['userId'] . '</td>';
             echo '<td>' . $report['report_txt'] . '</td>';
             //echo '<td rowspan="2">' . $job['job_description'] . '</td>';
-            echo '<td>';
-            echo '<form action="reports_edit.php" method="POST">';
+            echo '<td class="user-actions">';
+            echo '<form class="edit-form" action="reports_edit.php" method="POST">';
             echo '<input type="hidden" name="report_id" value="' . $report['reportId']  . '">';
             echo '<input type="hidden" name="user_id" value="' . $report['userId'] . '">';
             echo '<input type="hidden" name="report_txt" value="' . $report['report_txt'] . '">';
             echo '<input type="hidden" name="user_name" value="' . $report['user_name'] . '">';
             echo '<input type="hidden" name="user_role" value="' . $report['user_role'] . '">';
-            echo '<button type="submit">View Details</button>';
+            echo '<button type="submit" class="edit-button">View Details</button>';
             echo '</form>';        
             echo '</td>';
             echo '</tr>';

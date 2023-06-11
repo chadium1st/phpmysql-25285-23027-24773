@@ -22,7 +22,7 @@ if ((!isset($_SESSION['loggedin'])||($_SESSION['loggedin']!==true)) && ($_SESSIO
         include "includes/adminheader.php";
   ?>
   <main>
-    <h2>
+    <h2 class="table-heading">
         Jobs
     </h2>
     <?php 

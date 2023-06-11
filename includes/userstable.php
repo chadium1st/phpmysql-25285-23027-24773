@@ -12,7 +12,7 @@ $stmt->execute();
 $result=$stmt->get_result();
 $users = $result->fetch_all(MYSQLI_ASSOC);
 
-echo '<table id="user-table">';
+echo '<table class="user-table">';
 echo '<tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>User Role</th><th>Actions</th></tr>';
 foreach ($users as $user) {
     echo '<tr>';
@@ -21,7 +21,7 @@ foreach ($users as $user) {
     echo '<td id="user-email">' . $user['user_email'] . '</td>';
     echo '<td id="user-phone">' . $user['user_ph_no'] . '</td>';
     echo '<td id="user-role">' . $user['user_role'] . '</td>';
-    echo '<td id="user-actions">';
+    echo '<td class="user-actions">';
     echo '<form action="users_edit.php" method="POST" class="edit-form">';
     echo '<input type="hidden" name="id" value="' . $user['user_id'] . '">';
     echo '<input type="hidden" name="name" value="' . $user['user_name'] . '">';

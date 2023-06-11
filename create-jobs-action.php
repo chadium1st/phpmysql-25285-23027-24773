@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $job_description = sanitizeInput($_POST["job_description"]);
     $job_location = sanitizeInput($_POST["job_location"]);
     $qualifications = sanitizeInput($_POST["qualifications"]);
+    // $recruiter_id = sanitizeInput($_POST["recruiter_id"]);
 }
 $recruiter_id = $_SESSION['user_id'];
 // Insert the user information into the User table

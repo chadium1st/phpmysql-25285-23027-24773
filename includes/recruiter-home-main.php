@@ -51,7 +51,7 @@
                     <p>You can manage your jobs here.</p>
                 </div>
                 <div>
-                    <a href="own-jobs.php">
+                    <a href="includes/own-jobs.php">
                         <img src="graphic/righterrow.svg" alt="forward to own jobs">
                     </a>
                 </div>

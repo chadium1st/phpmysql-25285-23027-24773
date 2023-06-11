@@ -24,7 +24,7 @@
         </li>
 
         <li class="sidebardiv">
-          <a id="<?php if($active=="own-jobs")echo "active"; ?>"  href="own-jobs.php">
+          <a id="<?php if($active=="own-jobs")echo "active"; ?>"  href="includes/own-jobs.php">
             <div>
               <img class="imagetoinvert"  src="graphic/userwhite.svg" alt="">
               <p class="sidebarParagraph"> Your Jobs</p>

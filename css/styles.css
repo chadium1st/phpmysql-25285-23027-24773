@@ -29,7 +29,7 @@
 }
 body {
   margin-top: 100px;
-  font-family: Neucha;
+  font-family: DynaMedium;
   background-color: #f2f2f2;
   margin-bottom: 30px;
 }
@@ -286,73 +286,66 @@ p{
 
 
 /* styling the table */
-#user-table {
+.user-table {
+  font-size: 10px;
   width: 100%;
   border-collapse: collapse;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
-
-#user-table th,
-#user-table td {
+.table-heading{
+  width: 100%;
+  text-align: center;
+}
+.user-table th,
+.user-table td {
   border: 1px solid #e0e0e0;
-  padding: 12px 15px;
-  text-align: left;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
 }
 
-#user-table th {
+.user-table th {
   background-color: #3f51b5;
   color: white;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-#user-table tr:nth-child(even) {
+.user-table tr:nth-child(even) {
   background-color: #f7f7f7;
 }
 
-#user-table tr:hover {
+.user-table tr:hover {
   background-color: #f1f1f1;
-}
-
-.jobs-table-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#jobs-table {
-  border: 1px solid black;
-  font-size: 20px;
-}
-
-td, th {
-  padding: 10px;
-  border: 1px solid black;  
 }
 
 .edit-button,
 .delete-button {
-  padding: 6px 12px;
+  padding: 6px 5px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 10px;
   transition: background-color 0.3s;
 }
 
 .edit-button {
+  width: 45px;
   background-color: #4CAF50;
   color: white;
 }
 
 .delete-button {
+  text-align: center;
+  width:45px;
   background-color: #f44336;
   color: white;
 }
 
-.edit-button:hover {
-  background-color: #45a049;
+.edit-button:hover { 
+   background-color: 
+   #45a049;
 }
 
 .delete-button:hover {
@@ -362,12 +355,13 @@ td, th {
 .edit-form,
 .delete-form {
   display: inline-block;
-  margin-right: 5px;
+  margin-bottom: 5px;
 }
 
-#user-actions {
+.user-actions {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
 }
 /* styling the table ended */
 
@@ -433,6 +427,19 @@ footer {
 }
 
 /* Optional styles for the text within the footer */
+/* media queries for tables */
+@media only screen and (min-width: 550px) {
+  .edit-button,
+  .delete-button {
+    width: 55px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  .user-table {
+    font-size: 15px;
+  }
+}
+/* media queries for tables ended here */
 footer p {
   color: #888;
   font-size: 14px;
@@ -653,7 +660,26 @@ footer p {
 }
 
 @media only screen and (min-width: 768px) {
- 
+ /* Table styling */
+ .user-actions {
+  flex-direction: row;
+}
+.user-table {
+  font-size:large;
+}
+.edit-button {
+  margin-left: 10px;
+  font-size: 15px;
+  margin-right: 5px;
+  width: 55px;
+}
+
+.delete-button {
+  font-size: 15px;
+  width: 55px;
+}
+
+ /* ended table styling */
   .introductionsection a:hover img {
     transition: 0.5s;
     transform: scale(1.6);
@@ -661,89 +687,60 @@ footer p {
     -moz-transform: scale(1.6);
     -ms-transform: scale(1.6);
     -o-transform: scale(1.6);
-  }
-
+}
   .Introduction{
     flex-direction: row;
     justify-content: space-evenly;
-  }
-
+}
 .introductionsection {
   border-bottom: 50px solid blue;
 }
-
 .introductionsection:hover {
   background-color: rgb(27, 27, 221);
   border-bottom: 60px solid rgb(255, 255, 255);
-}
 
+}
 body{
   margin-top: 130px;
 }
-
-.jobs-table-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-  #jobs-table {
-    border: 1px solid black;
-    font-size: 32px;
-  }
-
-  td, th {
-    padding: 15px;
-    border: 1px solid black;  
-  }
-
 .introductionsection{
     height: 300px;
 }
-
-  #first-page-container {
+    #first-page-container {
       width: 50%;
   }
-
   .logo img {
     width: 65px;
   }
-
   #imagetoinvert {
     width:40px;
   }
-
   .search button i img {
     width: 25px;
   }
-
   #logoImg{
     width: 65px;
   }
-
   .toggle-btn {
     width: 40px;
     height: 30px;
   }
-
   .toggle-btn.active span:nth-child(1) {
     transform: rotate(45deg) translate(10px, 5px);
   }
-
   .toggle-btn.active span:nth-child(2) {
     opacity: 0;
   }
-
   .toggle-btn.active span:nth-child(3) {
     transform: rotate(-45deg) translate(12px, -7px);
   }
-
   .search input {
     width: 90%;
     font-size: 1.2em;
     padding: 8px 12px;
   }
 
+  
   .search button {
     padding: 8px;
     padding-top: 12px;
@@ -752,7 +749,6 @@ body{
   .sidebar.open{
     width: 250px;
   }
-
   .sidebar.open p{
     font-size: 1.2em;
   }
@@ -768,79 +764,59 @@ body{
   .introductionsection {
     border-bottom: 60px solid blue;
   }
-
   .introductionsection:hover {
     background-color: rgb(27, 27, 221);
     border-bottom: 70px solid rgb(255, 255, 255);
+   
   }
-
   .logo img {
       width: 75px;
-  }
+    }
    
-  .search button i img {
-    width: 35px;
-  }
-
-  #logoImg{
-    width: 75px;
-  }
-
-  .toggle-btn {
-    width: 50px;
-    height: 40px;
-  }
-
-  .toggle-btn.active span:nth-child(1) {
-    transform: rotate(45deg) translate(20px, 5px);
-    -webkit-transform: rotate(45deg) translate(20px, 5px);
-    -moz-transform: rotate(45deg) translate(20px, 5px);
-    -ms-transform: rotate(45deg) translate(20px, 5px);
-    -o-transform: rotate(45deg) translate(20px, 5px);
-  }
-
-  .toggle-btn.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .toggle-btn.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(20px, -7px);
-    -webkit-transform: rotate(-45deg) translate(20px, -7px);
-    -moz-transform: rotate(-45deg) translate(20px, -7px);
-    -ms-transform: rotate(-45deg) translate(20px, -7px);
-    -o-transform: rotate(-45deg) translate(20px, -7px);
-  }
+    .search button i img {
+      width: 35px;
+    }
+    #logoImg{
+      width: 75px;
+    }
+    .toggle-btn {
+      width: 50px;
+      height: 40px;
+    }
+    .toggle-btn.active span:nth-child(1) {
+      transform: rotate(45deg) translate(20px, 5px);
+      -webkit-transform: rotate(45deg) translate(20px, 5px);
+      -moz-transform: rotate(45deg) translate(20px, 5px);
+      -ms-transform: rotate(45deg) translate(20px, 5px);
+      -o-transform: rotate(45deg) translate(20px, 5px);
+}
+    .toggle-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .toggle-btn.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(20px, -7px);
+      -webkit-transform: rotate(-45deg) translate(20px, -7px);
+      -moz-transform: rotate(-45deg) translate(20px, -7px);
+      -ms-transform: rotate(-45deg) translate(20px, -7px);
+      -o-transform: rotate(-45deg) translate(20px, -7px);
+}
     .search input {
       width: 70%;
       font-size: 1.3em;
       padding: 8px 12px;
-  }
+    }
   
     
-  .search button {
-    padding: 8px;
-    padding-top: 12px;
-  }
+    .search button {
+      padding: 8px;
+      padding-top: 12px;
+    }
 
     
   .introductionsection{
     height: 330px;
     width: 330px;
-  }
+}
    
-  .jobs-table-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #jobs-table {
-    border: 1px solid black;
-    font-size: 32px;
-  }
-
-  td, th {
-    padding: 15px;
-    border: 1px solid black;  
-  }
+    
   }

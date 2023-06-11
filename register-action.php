@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     else{
         // Insert the user information into the User table
-        $sql = "INSERT INTO User (user_name, user_password, user_email, user_ph_no, user_role)
+        $sql = "INSERT INTO user (user_name, user_password, user_email, user_ph_no, user_role)
         VALUES (?, ?, ?, ?, ?)";
 
         $stmt = $conn->prepare($sql);

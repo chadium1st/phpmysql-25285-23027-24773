@@ -22,8 +22,8 @@ if ((!isset($_SESSION['loggedin'])||($_SESSION['loggedin']!==true)) && ($_SESSIO
         include "includes/adminheader.php";
   ?>
   <main>
-    <h2>
-        Jobs
+    <h2 class="table-heading">
+        REPORTS
     </h2>
     <?php 
         include "includes/reportstable.php";

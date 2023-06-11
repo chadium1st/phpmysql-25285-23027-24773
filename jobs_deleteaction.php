@@ -18,9 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $sql = "DELETE FROM jobposting
     WHERE job_id = ?;";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $job_id);
-
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $job_id);
         if ($stmt->execute()) {
         header("Location: jobs.php");
         exit;
