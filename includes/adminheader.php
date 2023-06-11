@@ -16,14 +16,16 @@ if ((!isset($_SESSION['loggedin'])||($_SESSION['loggedin']!==true)) && ($_SESSIO
      
     </div>
     
-    <div class="search">
-        <input type="text" placeholder="Search for users..">
+    <form action="search-result.php" method="POST" class="search">
+        <input type="text" name="searchtxt" placeholder="Search.." value="<?php if(isset($_SESSION['searchtext'])) echo $_SESSION['searchtext'];?>">
+        <input type="text" name="search_button_value" hidden value="USER">
+
         <button type="submit">
           <i class="fa fa-search">
             <img class="search-icon" src="graphic/searchsvg.svg" alt="search icon" title="Search">
           </i>
         </button>
-    </div>
+    </form>
     <nav class="nav">
       <ul>
         <li><a href="home.php"><img id="imagetoinvert" src="graphic/home_filled.svg" alt="home icon" title="Home"></a></li>

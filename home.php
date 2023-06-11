@@ -6,6 +6,7 @@
     header("Location: index.php");
     exit;
   }
+  $_SESSION["searchtext"]="";
 ?>
 
 <!DOCTYPE html>
